@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Demon Slayer: Infinity Castle | Movie Showcase</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            isolation: isolate;
+            background: #08090d;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(
+                90deg,
+                rgba(0,0,0,.90),
+                rgba(0,0,0,.55),
+                rgba(0,0,0,.20)
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            z-index: 2;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* VOICE ACTOR MODAL */
+        #modalVoice {
+            color: #d6ad65;
+            font-weight: 700;
+        }
+
+        .voice-actor-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(214, 173, 101, 0.10);
+            border-left: 3px solid #d6ad65;
+            border-radius: 5px;
+        }
+
+        .voice-actor-info strong {
+            color: #d6ad65;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Demon Slayer Logo" class="logo-img">
+            <span>鬼滅の刃</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#trailer">Trailer</a></li>
+            <li><a href="#movie">Movie</a></li>
+            <li><a href="#characters">Characters</a></li>
+            <li><a href="#upper-ranks">Upper Ranks</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#shop">Shop</a></li>
+        </ul>
+
+        <a href="#shop" class="nav-cart">
+            🛒 Cart <span id="cartCount">0</span>
+        </a>
+
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <header id="home" class="hero">
+
+        <video id="heroVideo" class="hero-video"
+               autoplay muted loop playsinline preload="auto">
+
+            <source src="img/Back.mp4" type="video/mp4">
+
+            Your browser does not support HTML5 video.
+
+        </video>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content fade-in">
+
+            <span class="hero-subtitle">
+                THE FINAL BATTLE BEGINS
+            </span>
+
+            <h1>DEMON SLAYER</h1>
+
+            <h2>INFINITY CASTLE</h2>
+
+            <p>
+                Tanjiro Kamado and the Hashira plunge into the chaotic,
+                shifting labyrinth of the Infinity Castle to face Muzan
+                Kibutsuji and his Upper Rank demons in the ultimate final battle.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#characters" class="btn primary-btn">
+                    Explore Characters
+                </a>
+
+                <a href="#movie" class="btn secondary-btn">
+                    Discover the Movie
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="scroll-indicator">
+            <span>SCROLL TO EXPLORE</span>
+            <div></div>
+        </div>
+
+    </header>
+
+
+    <!-- OFFICIAL TRAILER -->
+    <section id="trailer" class="section-container fade-in"
+             style="padding-top:50px; padding-bottom:50px;">
+
+        <h2 class="section-title">OFFICIAL TRAILER</h2>
+
+        <div class="video-wrapper">
+
+            <video controls preload="metadata">
+                <source src="img/video.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOVIE INFORMATION -->
+    <section id="movie" class="section-container fade-in">
+
+        <h2 class="section-title">The Final Battle Begins</h2>
+
+        <div class="movie-info">
+
+            <div class="movie-poster">
+                <img src="img//movie.jpeg"
+                     alt="Infinity Castle Movie Poster">
+            </div>
+
+            <div class="movie-details">
+
+                <h3>Demon Slayer: Kimetsu no Yaiba – Infinity Castle</h3>
+
+                <p><strong>Genre:</strong> Dark Fantasy, Action, Adventure</p>
+                <p><strong>Studio:</strong> Ufotable</p>
+
+                <p><strong>Story Overview:</strong></p>
+
+                <p>
+                    Following the intense training of the Hashira, the Demon
+                    Slayer Corps are suddenly transported into the mysterious
+                    Infinity Castle by Muzan's biwa demon, Nakime. Separated
+                    from one another, the Demon Slayers must fight against
+                    the Upper Ranks in a series of dangerous arenas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEMON SLAYER CORPS -->
+    <section id="characters" class="section-container fade-in">
+
+        <h2 class="section-title">Demon Slayer Corps</h2>
+
+        <div class="character-grid">
+
+            <!-- TANJIRO -->
+            <div class="character-card"
+                 data-name="Tanjiro Kamado"
+                 data-affiliation="Demon Slayer Corps"
+                 data-ability="Water Breathing / Sun Breathing"
+                 data-voice="Natsuki Hanae"
+                 data-desc="A kind-hearted boy who joined the Demon Slayer Corps to cure his sister Nezuko and avenge his family.">
+
+                <img src="img/tanjiro.jpg" alt="Tanjiro Kamado">
+
+                <div class="card-info">
+                    <h3>Tanjiro Kamado</h3>
+                    <p>Sun Breathing</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- NEZUKO -->
+            <div class="character-card"
+                 data-name="Nezuko Kamado"
+                 data-affiliation="Demon Slayer Corps"
+                 data-ability="Blood Demon Art"
+                 data-voice="Akari Kito"
+                 data-desc="Tanjiro's younger sister, transformed into a demon but retaining her humanity and protecting humans.">
+
+                <img src="img/Nezuko.jpg" alt="Nezuko Kamado">
+
+                <div class="card-info">
+                    <h3>Nezuko Kamado</h3>
+                    <p>Blood Demon Art</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- ZENITSU -->
+            <div class="character-card"
+                 data-name="Zenitsu Agatsuma"
+                 data-affiliation="Demon Slayer Corps"
+                 data-ability="Thunder Breathing"
+                 data-voice="Hiro Shimono"
+                 data-desc="A swordsman who uses Thunder Breathing and possesses incredible speed.">
+
+                <img src="img/Zenitsu.jpg" alt="Zenitsu Agatsuma">
+
+                <div class="card-info">
+                    <h3>Zenitsu Agatsuma</h3>
+                    <p>Thunder Breathing</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- INOSUKE -->
+            <div class="character-card"
+                 data-name="Inosuke Hashibira"
+                 data-affiliation="Demon Slayer Corps"
+                 data-ability="Beast Breathing"
+                 data-voice="Yoshitsugu Matsuoka"
+                 data-desc="Raised by boars, he wears a boar mask and fights using dual swords.">
+
+                <img src="img/Inosuke.jpg" alt="Inosuke Hashibira">
+
+                <div class="card-info">
+                    <h3>Inosuke Hashibira</h3>
+                    <p>Beast Breathing</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- GIYU -->
+            <div class="character-card"
+                 data-name="Giyu Tomioka"
+                 data-affiliation="Hashira"
+                 data-ability="Water Breathing"
+                 data-voice="Takahiro Sakurai"
+                 data-desc="The Water Hashira. A quiet and skilled swordsman.">
+
+                <img src="img/Giyu.jpg" alt="Giyu Tomioka">
+
+                <div class="card-info">
+                    <h3>Giyu Tomioka</h3>
+                    <p>Water Hashira</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- SHINOBU -->
+            <div class="character-card"
+                 data-name="Shinobu Kocho"
+                 data-affiliation="Hashira"
+                 data-ability="Insect Breathing"
+                 data-voice="Saori Hayami"
+                 data-desc="The Insect Hashira who uses poison and specialized sword techniques.">
+
+                <img src="img/shinobu.webp" alt="Shinobu Kocho">
+
+                <div class="card-info">
+                    <h3>Shinobu Kocho</h3>
+                    <p>Insect Hashira</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- MITSURI -->
+            <div class="character-card"
+                 data-name="Mitsuri Kanroji"
+                 data-affiliation="Hashira"
+                 data-ability="Love Breathing"
+                 data-voice="Kana Hanazawa"
+                 data-desc="The Love Hashira, known for her flexibility and unique sword.">
+
+                <img src="img/Mitsuri.jpeg" alt="Mitsuri Kanroji">
+
+                <div class="card-info">
+                    <h3>Mitsuri Kanroji</h3>
+                    <p>Love Breathing</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- MUICHIRO -->
+            <div class="character-card"
+                 data-name="Muichiro Tokito"
+                 data-affiliation="Hashira"
+                 data-ability="Mist Breathing"
+                 data-voice="Kengo Kawanishi"
+                 data-desc="The Mist Hashira and a talented young swordsman.">
+
+                <img src="img/Muichiro.jpg" alt="Muichiro Tokito">
+
+                <div class="card-info">
+                    <h3>Muichiro Tokito</h3>
+                    <p>Mist Breathing</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- UPPER RANK DEMONS -->
+    <section id="upper-ranks"
+             class="section-container fade-in demon-section">
+
+        <h2 class="section-title">Upper Rank Demons</h2>
+
+        <div class="character-grid demon-grid">
+
+
+            <!-- MUZAN -->
+            <div class="character-card demon-card"
+                 data-name="Muzan Kibutsuji"
+                 data-affiliation="Demon King"
+                 data-ability="Shapeshifting / Blood Demon Art"
+                 data-voice="Toshihiko Seki"
+                 data-desc="The progenitor of all demons and the main antagonist of the series.">
+
+                <img src="img/Muzan.jpg" alt="Muzan Kibutsuji">
+
+                <div class="card-info">
+                    <h3>Muzan Kibutsuji</h3>
+                    <p>Demon King</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- KOKUSHIBO -->
+            <div class="character-card demon-card"
+                 data-name="Kokushibo"
+                 data-affiliation="Upper Rank 1"
+                 data-ability="Moon Breathing"
+                 data-voice="Ryotaro Okiayu"
+                 data-desc="The strongest of the Upper Ranks and a former Demon Slayer.">
+
+                <img src="img/Kokushibo.jpg" alt="Kokushibo">
+
+                <div class="card-info">
+                    <h3>Kokushibo</h3>
+                    <p>Upper Rank 1</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- DOMA -->
+            <div class="character-card demon-card"
+                 data-name="Doma"
+                 data-affiliation="Upper Rank 2"
+                 data-ability="Ice Blood Demon Art"
+                 data-voice="Mamoru Miyano"
+                 data-desc="An Upper Rank demon who uses powerful ice techniques.">
+
+                <img src="img/Doma.jpg" alt="Doma">
+
+                <div class="card-info">
+                    <h3>Doma</h3>
+                    <p>Upper Rank 2</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- AKAZA -->
+            <div class="character-card demon-card"
+                 data-name="Akaza"
+                 data-affiliation="Upper Rank 3"
+                 data-ability="Destructive Death"
+                 data-voice="Akira Ishida"
+                 data-desc="A martial arts-focused demon who seeks powerful opponents.">
+
+                <img src="img/Akaza.webp" alt="Akaza">
+
+                <div class="card-info">
+                    <h3>Akaza</h3>
+                    <p>Upper Rank 3</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- NAKIME -->
+            <div class="character-card demon-card"
+                 data-name="Nakime"
+                 data-affiliation="Upper Rank 4"
+                 data-ability="Biwa Teleportation"
+                 data-voice="Marina Inoue"
+                 data-desc="The demon who controls the Infinity Castle using her biwa.">
+
+                <img src="img/nakime.jpg" alt="Nakime">
+
+                <div class="card-info">
+                    <h3>Nakime</h3>
+                    <p>Upper Rank 4</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+
+            <!-- KAIGAKU -->
+            <div class="character-card demon-card"
+                 data-name="Kaigaku"
+                 data-affiliation="Upper Rank 6"
+                 data-ability="Thunder Breathing"
+                 data-voice="Yoshimasa Hosoya"
+                 data-desc="A former apprentice who became a demon.">
+
+                <img src="img/kaigaku.webp" alt="Kaigaku">
+
+                <div class="card-info">
+                    <h3>Kaigaku</h3>
+                    <p>Upper Rank 6</p>
+                    <button class="view-more">View Info</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <section id="gallery" class="section-container fade-in">
+
+        <h2 class="section-title">Cinematic Gallery</h2>
+
+        <div class="gallery-grid">
+
+            <img src="img/1.jpg"
+                 alt="Gallery Image 1" class="gallery-img">
+
+            <img src="img/2.webp"
+                 alt="Gallery Image 2" class="gallery-img">
+
+            <img src="img/3.jpg"
+                 alt="Gallery Image 3" class="gallery-img">
+
+            <img src="img/4.webp"
+                 alt="Gallery Image 4" class="gallery-img">
+
+            <img src="img/5.webp"
+                 alt="Gallery Image 5" class="gallery-img">
+
+            <img src="img/6.jpg"
+                 alt="Gallery Image 6" class="gallery-img">
+
+        </div>
+
+    </section>
+
+
+    <!-- DEMON SLAYER MERCHANDISE SHOP -->
+    <section id="shop" class="shop-section fade-in">
+
+        <div class="shop-header">
+
+            <span class="shop-subtitle">INFINITY CASTLE COLLECTION</span>
+
+            <h2>DEMON SLAYER <span>SHOP</span></h2>
+
+            <p>
+                Discover exclusive merchandise inspired by the Demon Slayer universe.
+            </p>
+
+        </div>
+
+        <div class="shop-container">
+
+            <!-- PRODUCTS -->
+            <div class="products-grid">
+
+
+                <!-- TANJIRO FIGURE -->
+                <div class="shop-card">
+
+                    <img src="img/resin tanjiro.jpg" alt="Tanjiro Figure">
+
+                    <div class="product-info">
+
+                        <span class="product-category">RESIN COLLECTION</span>
+
+                        <h3>Tanjiro Kamado Figure</h3>
+
+                        <p class="price">₱850</p>
+
+                        <button class="add-cart"
+                            data-id="1"
+                            data-name="Tanjiro Kamado Figure"
+                            data-price="850"
+                            data-image="assets/shop/tanjiro.jpg">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NEZUKO FIGURE -->
+                <div class="shop-card">
+
+                    <img src="img/resin nezuko.jpg" alt="Nezuko Figure">
+
+                    <div class="product-info">
+
+                        <span class="product-category">RESIN COLLECTION</span>
+
+                        <h3>Nezuko Kamado Figure</h3>
+
+                        <p class="price">₱950</p>
+
+                        <button class="add-cart"
+                            data-id="2"
+                            data-name="Nezuko Kamado Figure"
+                            data-price="950"
+                            data-image="assets/shop/nezuko.jpg">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ZENITSU FIGURE -->
+                <div class="shop-card">
+
+                    <img src="img/resin zenitsu.jpg" alt="Zenitsu Figure">
+
+                    <div class="product-info">
+
+                        <span class="product-category">RESIN COLLECTION</span>
+
+                        <h3>Zenitsu Agatsuma Figure</h3>
+
+                        <p class="price">₱800</p>
+
+                        <button class="add-cart"
+                            data-id="3"
+                            data-name="Zenitsu Agatsuma Figure"
+                            data-price="800"
+                            data-image="assets/shop/zenitsu.jpg">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INOSUKE FIGURE -->
+                <div class="shop-card">
+
+                    <img src="img/resin inosuke.jpg" alt="Inosuke Figure">
+
+                    <div class="product-info">
+
+                        <span class="product-category">RESIN COLLECTION</span>
+
+                        <h3>Inosuke Hashibira Figure</h3>
+
+                        <p class="price">₱1,100</p>
+
+                        <button class="add-cart"
+                            data-id="4"
+                            data-name="Giyu Tomioka Figure"
+                            data-price="1100"
+                            data-image="assets/shop/giyu.jpg">
+                            ADD TO CART
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SHOPPING CART -->
+            <aside class="cart-panel">
+
+                <div class="cart-title">
+                    <h2>YOUR CART</h2>
+                    <span id="cartCount">0</span>
+                </div>
+
+                <div id="cartItems" class="cart-items">
+                    <p class="empty-cart">Your cart is empty.</p>
+                </div>
+
+                <div class="cart-footer">
+
+                    <div class="total-row">
+                        <span>Total:</span>
+                        <strong id="cartTotal">₱0</strong>
+                    </div>
+
+                    <button id="checkoutBtn" class="checkout-btn">
+                        CHECKOUT
+                    </button>
+
+                    <button id="clearCart" class="clear-btn">
+                        CLEAR CART
+                    </button>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>Infinity Castle Showcase</h3>
+
+            <p>
+                This is a fan-made website for educational purposes.
+                Demon Slayer: Kimetsu no Yaiba is owned by Koyoharu
+                Gotouge, Shueisha, Aniplex, and Ufotable.
+            </p>
+
+            <p>
+                &copy; 2026 Demon Slayer Showcase. All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- CHARACTER MODAL -->
+    <div id="characterModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close-modal">&times;</span>
+
+            <h2 id="modalName">Character Name</h2>
+
+            <p>
+                <strong>Affiliation:</strong>
+                <span id="modalAffiliation"></span>
+            </p>
+
+            <p>
+                <strong>Abilities:</strong>
+                <span id="modalAbility"></span>
+            </p>
+
+            <!-- VOICE ACTOR -->
+            <div class="voice-actor-info">
+
+                <span>🎙️</span>
+
+                <div>
+                    <strong>Japanese Voice Actor:</strong>
+                    <span id="modalVoice">Not available</span>
+                </div>
+
+            </div>
+
+            <p><strong>Description:</strong></p>
+
+            <p id="modalDesc"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- GALLERY LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+
+        <span class="close-lightbox">&times;</span>
+
+        <img id="lightbox-img" src="" alt="Enlarged Image">
+
+    </div>
+
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" title="Go to top">↑</button>
+
+
+    <!-- BOOTSTRAP JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CUSTOM JS -->
+    <script src="js/script.js"></script>
+
+
+    <!-- HERO VIDEO ACTIVATION -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const heroVideo = document.getElementById("heroVideo");
+
+            if (heroVideo) {
+
+                heroVideo.muted = true;
+                heroVideo.loop = true;
+                heroVideo.playsInline = true;
+
+                heroVideo.play().catch(function (error) {
+                    console.log("Hero video playback error:", error);
+                });
+
+            }
+
+        });
+
+    </script>
+
+
+    <!-- CHARACTER VOICE ACTOR MODAL -->
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const characterCards = document.querySelectorAll(".character-card");
+
+            const modal = document.getElementById("characterModal");
+
+            const closeModal = document.querySelector(".close-modal");
+
+            characterCards.forEach(function (card) {
+
+                const viewButton = card.querySelector(".view-more");
+
+                if (viewButton) {
+
+                    viewButton.addEventListener("click", function () {
+
+                        document.getElementById("modalName").textContent =
+                            card.dataset.name || "";
+
+                        document.getElementById("modalAffiliation").textContent =
+                            card.dataset.affiliation || "";
+
+                        document.getElementById("modalAbility").textContent =
+                            card.dataset.ability || "";
+
+                        document.getElementById("modalVoice").textContent =
+                            card.dataset.voice || "Not available";
+
+                        document.getElementById("modalDesc").textContent =
+                            card.dataset.desc || "";
+
+                        modal.style.display = "block";
+
+                    });
+
+                }
+
+            });
+
+            if (closeModal) {
+
+                closeModal.addEventListener("click", function () {
+                    modal.style.display = "none";
+                });
+
+            }
+
+            window.addEventListener("click", function (event) {
+
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
